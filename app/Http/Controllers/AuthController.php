@@ -20,7 +20,7 @@ class AuthController extends Controller
             'mdp_pers' => 'required',
             'typeCompte' => 'required'
         ]);
-        $test = DB::table('personne')->where('mail_pers', '=', $request->get('mail_pers'))->get();
+        $test = DB::table('sae.personne')->where('mail_pers', '=', $request->get('mail_pers'))->get();
         dd($test);
         if (auth()->attempt($request->only('mail_pers', 'mdp_pers'))) {
             if (in_array('1', explode(' ', auth()->user()->role)) && $request->get('typeCompte') == 'client') {
