@@ -1,3 +1,9 @@
+@font-face {
+	font-family: 'Montserrat';
+	font-weight: 400;
+	src: url(‘/fonts/Montserrat-Regular.woff2’) format(‘woff2’),
+}
+
 li.separer {
     border-right: solid 1px black;
 }
@@ -47,3 +53,177 @@ nav a{
         margin-bottom: 10px;
     }
 }
+
+
+
+
+
+
+/***********************************************************************************************************
+************************************************************************************************************
+************************************************************************************************************
+CSS de la page de paiement début
+************************************************************************************************************
+************************************************************************************************************
+***********************************************************************************************************/
+.paiement + body {
+    background-color: #F6F5EE;
+}
+
+.paiement + h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin-left: 1%;
+    letter-spacing: -0.6px;
+}
+
+.paiement + input {
+    border-radius: 15px;
+    border: 1px solid #000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.6px;
+    color: #000000;
+    background-color: #FFFFFF;
+    flex-shrink: 0;
+    padding: 1%;
+    margin: 1%;
+
+}
+
+.paiement + .form-control {
+    width: 50%;
+    border-radius: 0.8em;
+}
+
+.paiement + div {
+    display: flex;
+    align-items: baseline;
+    margin: 1%;
+}
+
+.paiement + .calendar-content {
+    display: flex;
+    align-items: baseline;
+}
+
+
+.paiement + .datepicker {
+    display: flex;
+    align-items: center;
+    padding: 1%;
+}
+
+.paiement + .input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+    border-radius: 0.8em;
+    flex: 0.5;
+}
+
+.paiement + h6 {
+    margin: 2%;
+}
+
+.paiement + .mb-3 {
+    padding: 2%;
+    margin: 1%;
+    margin-bottom: 0%!important;
+}
+
+.paiement + html body div form div.mb-3 + div.mb-3 + .datepicker + div.mb-3 input{
+    width: 20%;
+}
+.paiement + div form div.mb-3:first-child li {
+    list-style: none;
+    width: 18em;
+}
+
+.paiement + div form div.mb-3 li {
+    list-style: none;
+}
+
+.paiement + div form div.datepicker div li {
+    list-style: none;
+}
+
+.paiement + div form div.datepicker + div.mb-3  li {
+    list-style: none;
+    width: auto;
+}
+
+.paiement + html body div form div.mb-3 + div.mb-3 + .datepicker + div.mb-3 input{
+    width: 20%;
+}
+
+.paiement + section button:first-child {
+    background-color: #EC3B53;
+    border-radius: 0.5em;
+    border: none;
+    width: 40%;
+    height: 2em;
+    flex-shrink: 0;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.3px;
+    margin-left: 15%;
+    margin-top: 5%;
+}
+
+.paiement + section + section li {
+    list-style: none;
+    margin-left: 1%;
+    width: auto;
+}
+
+.paiement + section + span + section button {
+    background-color: #EC3B53;
+    border-radius: 0.5em;
+    border: none;
+    width: 70%;
+    height: 2em;
+    flex-shrink: 0;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.3px;
+}
+
+.paiement + section + span + section .mb-3 {
+    margin: 0%;
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+}
+
+.paiement + section + span + section {
+    margin-left: 2%;
+}
+
+.paiement + .vertical-line{
+    border-left: 2px solid #000;
+    display: inline-block;
+    height: 25em;
+    margin: 0 20px;
+}
+
+/***********************************************************************************************************
+************************************************************************************************************
+************************************************************************************************************
+CSS de la page de paiement FIN
+************************************************************************************************************
+************************************************************************************************************
+***********************************************************************************************************/
