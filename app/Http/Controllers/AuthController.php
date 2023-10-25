@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 
 class AuthController extends Controller
@@ -19,7 +20,7 @@ class AuthController extends Controller
             'mdp_pers' => 'required',
             'typeCompte' => 'required'
         ]);
-
+        dd(DB::table('personne')->where('mail_pers', '=', $request->get('mail_pers')));
         if (auth()->attempt($request->only('mail_pers', 'mdp_pers'))) {
             if (in_array('1', explode(' ', auth()->user()->role)) && $request->get('typeCompte') == 'client') {
                 return redirect()->route('myClientAccount');
