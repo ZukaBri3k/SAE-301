@@ -27,9 +27,9 @@ class AccountController extends Controller
             'name' => 'required'
         ]);
 
-        $user = auth()->user()->getRememberToken();
-        DB::table('personnes')->where('remember_token', '=', $user)->update([
-            "name" => $data["name"]
+        $user = auth()->user()->mail_pers;
+        DB::table('personnes')->where('mail_pers', '=', $user)->update([
+            "nom_pers" => $data["nom_pers"]
         ]);
 
 
