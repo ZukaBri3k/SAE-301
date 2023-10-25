@@ -19,7 +19,7 @@ class AuthController extends Controller
             'mail_pers' => 'required|email',
             'mdp_pers' => 'required',
             'typeCompte' => 'required'
-        ]);
+        ]);//
         $test = DB::table('sae.personne')->where('mail_pers', '=', $request->get('mail_pers'))->get();
         dd($test);
         if (auth()->attempt($request->only('mail_pers', 'mdp_pers'))) {
