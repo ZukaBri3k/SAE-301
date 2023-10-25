@@ -18,9 +18,22 @@ class Personnes extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'civilite_pers',
+        'nom_pers',
+        'prenom_pers',
+        'telephone_pers',
+        'mail_pers',
+        'ville_pers',
+        'code_postal_pers',
+        'adresse_pers',
+        'pays_pers',
+        'mdp_pers',
+        'pseudo_pers',
+        'photo_pers',
+        'age_pers',
+        'est_banni',
+        'iban',
+        'role'
     ];
 
     /**
