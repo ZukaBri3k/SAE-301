@@ -19,9 +19,9 @@ class AuthController extends Controller
             'password' => 'required',
             'typeCompte' => 'required'
         ]);
-        dd($request->only('email', 'password'));
-        if (auth()->attempt($request->only('email', 'password'))) {
 
+        if (auth()->attempt($request->only('email', 'password'))) {
+            dd('test');
             if (in_array('1', explode(' ', auth()->user()->role)) && $request->get('typeCompte') == 'client') {
                 return redirect()->route('myClientAccount');
             } else if (in_array('2', explode(' ', auth()->user()->role)) && $request->get('typeCompte') == 'proprietaire') {
