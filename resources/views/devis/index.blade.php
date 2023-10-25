@@ -94,7 +94,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js" integrity="sha512-YcsIPGdhPK4P/uRW6/sruonlYj+Q7UHWeKfTAkBW+g83NKM+jMJFJ4iAPfSnVp7BKD4dKMHmVSvICUbE/V1sSw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
     <p>devis créé ? retourner dans la messagerie pour le télécharger</p>
-    <a href="client.php">retourner dans la messagerie</a>
+    <a href="devis-client">retourner dans la messagerie</a>
     <script>
         document.getElementById("genererDevis").addEventListener("click", function () {
             // Ici, vous générez le devis et effectuez toutes les actions nécessaires.
