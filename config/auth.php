@@ -60,7 +60,7 @@ return [
     */
 
     'providers' => [
-        'personnes' => [
+        'personne' => [
             'driver' => 'eloquent',
             'model' => App\Models\Personne::class,
         ],
