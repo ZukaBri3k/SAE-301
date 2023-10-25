@@ -21,6 +21,7 @@
         </header>
     <main>
         <h1>Demander le devis :</h1>
+        $devisCree = file_get_contents("devis_state.txt");
         <form action='devis-suite.php' method='POST' name="devis">
         <section>
             <div>    
@@ -28,11 +29,29 @@
                     <button type="button">Demander devis</button>
                 </section>
                 <section class="p3">
-                    <button type="button">Accepter devis</button>
-                    <button type="button">Refuser devis</button>
+                    @if ($devisCree === 'true')
+                        <p>Accepter ou Refuser le devis :</p>
+                        <button type="button">Accepter devis</button>
+                        <button type="button">Refuser devis</button>
+                    <p>Télécharger PDF</p>
+                    <a href="Mon_Devis.pdf" download="Mon_Devis.pdf">Télécharger le PDF</a>
                 </section>
             </div>
         </form>
     </main>
 </body>
+<script>
+document.getElementById("refuserDevis").addEventListener("click", function () {
+    // Effectuez ici toute action nécessaire, par exemple, enregistrez le refus du devis dans la base de données.
+    // Redirigez ensuite l'utilisateur vers proprio.php avec un message.
+    window.location.href = 'proprio.php?refus=1';
+});
+</script>
+<script>
+document.getElementById("accepterDevis").addEventListener("click", function () {
+    // Effectuez ici toute action nécessaire, par exemple, enregistrez le refus du devis dans la base de données.
+    // Redirigez ensuite l'utilisateur vers proprio.php avec un message.
+    window.location.href = 'proprio.php?accept=1';
+});
+</script>
 </html>
