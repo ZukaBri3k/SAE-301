@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Personnes>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Personne>
  */
 class PersonnesFactory extends Factory
 {
