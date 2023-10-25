@@ -10,8 +10,8 @@
     @endforeach
     <form action="{{ route('authenticate') }}" method="post">
         @csrf
-        <input type="email" name="email">
-        <input type="password" name="password">
+        <input type="email" name="mail_pers">
+        <input type="password" name="mdp_pers">
         <div>
             <input type="radio" id="client" name="typeCompte" value="client" />
             <label for="client">Client</label>

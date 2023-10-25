@@ -15,13 +15,12 @@ class AuthController extends Controller
     public function authenticate(Request $request)
     {
         $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
+            'mail_pers' => 'required|email',
+            'mdp_pers' => 'required',
             'typeCompte' => 'required'
         ]);
 
-        if (auth()->attempt($request->only('email', 'password'))) {
-            dd('test');
+        if (auth()->attempt($request->only('mail_pers', 'mdp_pers'))) {
             if (in_array('1', explode(' ', auth()->user()->role)) && $request->get('typeCompte') == 'client') {
                 return redirect()->route('myClientAccount');
             } else if (in_array('2', explode(' ', auth()->user()->role)) && $request->get('typeCompte') == 'proprietaire') {
