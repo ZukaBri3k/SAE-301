@@ -26,24 +26,6 @@
         <hr>
     </header>
 <main>
-    <?php
-            $id_l = $dbh->prepare("SELECT id_logement FROM sae.logement");
-            $id_l->execute();
-            
-            $i = 0; 
-        
-            while ($row = $id_l->fetch(PDO::FETCH_ASSOC)) {
-                $i++;
-            }
-        
-            if ($i > 0) {
-
-            } else {
-                $id_logement  = $i++;
-            }
-    
-    
-    ?>
     <section class="p-top">
         <h1>Dites nous tout sur votre logement !</h1>
     </section>
@@ -66,22 +48,12 @@
 
                 </div>
             </div>
-            <?php
-                if(isset($_POST["nature_logement"])){
-                    $nature_logement = $_POST["nature_logement"];
-                }
-            ?>
             <div class='p1-2'>
                 <div class="abc">
                     <div class='p1-2-nom'><h3>Décrivez-nous votre logement * </h3><p title="obligatoire">* Tous les champs sont obligatoires et doivent être remplis</p></div>
                     <div class='champ1'><textarea name="description"  placeholder="Saisissez la description du logement"></textarea></div>      
                 </div>
             </div>
-            <?php
-                if(isset($_POST["description"])){
-                    $descritpif_logement = $_POST["description"];
-                }
-            ?>
             <div class="p1-3">
                 <div class="abc">
                     <section class="p1-3-1">
@@ -98,20 +70,6 @@
                     </section>    
                 </div>
             </div>
-            <?php
-                if(isset($_POST["surface"])){
-                    $surface_habitable_logement = $_POST["surface"];
-                }
-                if(isset($_POST["nb_p_max"])){
-                    $nb_personne_max = $_POST["nb_p_max"];
-                }
-                if(isset($_POST["nb_chambre"])){
-                    $nb_chambre_logement = $_POST["nb_chambre"];
-                }
-                if(isset($_POST["sdb"])){
-                    $nb_salle_de_bain_logement = $_POST["sdb"];
-                }
-            ?>
             <div class='p1-4'>
                 <div class="abc">
                     <div class='p1-4-nom'><h3>De quels aménagements propose votre logement ?* </h3><p title="obligatoire">* Veuillez selectionner au moins un aménagement de logement</p></div>
@@ -132,11 +90,6 @@
                    <input type="hidden" id="amenagement_logement" name="amenagement_logement" />
                 </div>
             </div>
-            <?php
-                if(isset($_POST["amenagement_logement"])){
-                    $amenagement_propose_logement = $_POST["amenagement_logement"] + ",". $_POST["autre_ame"];
-                }
-            ?>
             <div class='p1-5'>
                 <div class="abc">
                     <div class='p1-5-nom'><h3>De quelles installations propose votre logement ?*</h3><p title="obligatoire">* Veuillez selectionner au moins une installation de logement</p></div>
@@ -157,11 +110,6 @@
                     <input type="hidden" id="installation_logement" name="installation_logement" />
                 </div>
             </div>
-            <?php
-                if(isset($_POST["installation_logement"])){
-                    $installation_offerte_logement = $_POST["installation_logement"] + ",". $_POST["autre_inst"];
-                }
-            ?>
             <div class='p1-6'>
                 <div class="abc">
                     <div class='p1-6-nom'><h3>Quelles sont les charges additionnelles que vous souhaitez proposer ?</h3></div>
@@ -177,11 +125,6 @@
                 </div>
                 <input type="hidden" id="charge" name="charge" />
             </div>
-            <?php
-                if(isset($_POST["charge"])){
-                    $charge_additionnel_libelle = $_POST["charge"] + ",".$_POST["autre_charge"]." ";
-                }
-            ?>
             <div class='p1-7'>
                 <div class="abc">
                     <div class='p1-7-nom'><h3>Vous-voulez faire payer par paypal ?</h3></div>
@@ -191,13 +134,6 @@
                         </div>
                 </div>
             </div>
-            <?php
-            if(isset($_POST["btn_paypal"])){
-                if(isset($_POST["lien_paypal"])){
-                    $lien_paypal = $_POST["lien_paypal"];
-                }
-            }   
-            ?>
             <div class='p1-8'>
                 <div class="abc">
                     <div class='p1-8-nom'><h3>Quelle sera la photo de couverture de votre logement ?*</h3><p title="obligatoire">* Veuillez insérer au moins une photo de couverture pour votre logement</p></div>
@@ -207,11 +143,6 @@
                         </div>
                     </div>             
                 </div>
-                <?php
-                    if(isset($_POST["image_1"])){
-                        $image1 = $_POST["image_1"];
-                    }   
-                    ?>
             </div>
         </section>
         <section class="p2">
@@ -229,23 +160,6 @@
                     </section>  
                 </div>
             </div>
-            <?php
-                if(isset($_POST["adresse"])){
-                    $adresse_logement = $_POST["adresse"];
-                }
-                if(isset($_POST["ville"])){
-                    $ville_logement = $_POST["ville"];
-                }
-                if(isset($_POST["cp"])){
-                    $code_postal_logement = $_POST["cp"];
-                }
-                if(isset($_POST["longitude"])){
-                    $longitude_logement = $_POST["longitude"];
-                }
-                if(isset($_POST["latitude"])){
-                    $latitude_logement = $_POST["latitude"];
-                }
-            ?>
             <div class='p2-2'>
                 <div class="abc">
                     <div class='p2-2-nom'><h3>De quel type est votre logement ?*</h3><p title="obligatoire">* Veuillez sélectionner un  type de logement (pour en savoir plus, <a href="">cliquez ici</a>)</p></div>
@@ -265,14 +179,6 @@
                 </div>
                 <input type="hidden" id="type_logement" name="type_logement" />
             </div>
-            <?php
-                if(isset($_POST["type_logement"])){
-                    $type_logement = $_POST["type_logement"] ;
-                }
-                if(isset($_POST["autre_type"])){
-                    $type_logement = $_POST["autre_type"] ;
-                }
-            ?>
             <div class="p2-3">
                 <div class="abc">
                     <div class='p2-3-nom'><h3>Quel sera le titre de votre logement ?*</h3><p title="obligatoire">* Tous les champs sont obligatoires et doivent être remplis</p></div>
@@ -282,14 +188,6 @@
                         </section>     
                 </div>
             </div>
-            <?php
-                if(isset($_POST["libelle"])){
-                    $libelle_logement = $_POST["libelle"];
-                }
-                if(isset($_POST["accroche"])){
-                    $accroche_logement = $_POST["accroche"];
-                }
-            ?>
             <div class='p2-4'>
                 <div class="abc">
                     <div class='p2-4-nom'><h3>Quels équipements propose votre logement ?*</h3><p title="obligatoire">* Veuillez sélectionner au moins un équipement de logement</p></div>
@@ -310,12 +208,6 @@
                     <input type="hidden" id="equipement" name="equipement" />
                 </div>
             </div>
-            <?php
-
-                if(isset($_POST["equipement"])){
-                    $equipement_propose_logement = $_POST["equipement"] + ",".$_POST["autre_equip"] ." ";
-                }
-            ?>
             <div class='p2-5'>
                 <div class="abc">
                     <div class='p2-5-nom'><h3>De quels services propose votre logement ?*</h3><p title="obligatoire">* Veuillez sélectionner au moins un service de logement</p></div>
@@ -332,23 +224,12 @@
                 </div>
                 <input type="hidden" id="services" name="services" />
             </div>
-            <?php
-
-                if(isset($_POST["services"])){
-                    $service_complementaire_logement = $_POST["services"] + $_POST["autre_service"];
-                }
-            ?>
             <div class='p2-6'>
                 <div class="abc">
                     <div class='p2-6-nom'><h3>Quel sera le prix par nuit de votre logement ?*</h3><p title="obligatoire">* Veuillez renseigner le prix par nuit du logement</p></div>
                     <div><input name='prix' style="width:150px; margin-left:15px;" placeholder="Prix par nuit" value = '' type='number'>€</div>
                 </div>
             </div>
-            <?php
-                if(isset($_POST["prix"])){
-                    $prix_logement = $_POST["prix"];
-                }
-            ?>
             <div class='p2-7'>
                 <div class="abc">
                     <div class='p2-7-nom'>
@@ -373,11 +254,6 @@
                     <input type="hidden" id="condition_annulation" name="condition_annulation" />
                 </div>
             </div>
-            <?php
-                if(isset($_POST["condition_annulation"])){
-                    $condition_annulation = $_POST[""];
-                }
-            ?>
             <div class='p2-8'>
                 <div class="abc">
                     <div class='p2-8-nom'>
@@ -409,50 +285,11 @@
                         </div>
                     </div>
                 </div>
-                <?php
-                    if(isset($_POST["image_2"])){
-                        $image2 = $_POST["image_2"];
-                    }if(isset($_POST["image_3"])){
-                        $image2 = $_POST["image_3"];
-                    }if(isset($_POST["image_4"])){
-                        $image2 = $_POST["image_4"];
-                    }
-                    ?>
             </div>
         </section>
     </div>        
 
     <button name="btn_validation" class="validation" type="submit">VALIDER</button>
-    <?php /*
-    
-    if (isset($_POST["btn_validation"])) {
-        $r = $dbh->prepare("INSERT INTO sae.logement(   id_logement,  
-                                                        libelle_logement, 
-                                                        accroche_logement, 
-                                                        descritpif_logement, 
-                                                        nb_personne_max, 
-                                                        longitude_logement, 
-                                                        latitude_logement, 
-                                                        adresse_logement, 
-                                                        code_postal_logement, 
-                                                        ville_logement, 
-                                                        nature_logement, 
-                                                        type_logement, 
-                                                        surface_habitable_logement, 
-                                                        nb_chambre_logement, 
-                                                        nb_salle_de_bain_logement, 
-                                                        amenagement_propose_logement, 
-                                                        installation_offerte_logement, 
-                                                        equipement_propose_logement, 
-                                                        service_complementaire_logement, 
-                                                        charge_additionnel_libelle, 
-                                                        photo_couverture_logement, 
-                                                        photo_complementaire_logement, 
-                                                        prix_logement)
-                            VALUES (".$id_logement.",".$libelle_logement.",".$accroche_logement.",".$descritpif_logement."".$nb_personne_max.",".$longitude_logement.",".$latitude_logement.",".$adresse_logement.",".$code_postal_logement.",".$ville_logement.",".$nature_logement.",".$type_logement.",".$surface_habitable_logement.",".$nb_chambre_logement.",".$nb_salle_de_bain_logement.",".$amenagement_propose_logement.",".$installation_offerte_logement.",".$equipement_propose_logement.",".$service_complementaire_logement.",".$charge_additionnel_libelle.",".$image_1.",".$image_2.",".$prix_logement.")");
-        $r->execute();
-    }*/
-    ?>
     </form>
 </section> 
 </main>
