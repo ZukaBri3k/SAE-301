@@ -423,7 +423,7 @@
     </div>        
 
     <button name="btn_validation" class="validation" type="submit">VALIDER</button>
-    <?php
+    <?php /*
     
     if (isset($_POST["btn_validation"])) {
         $r = $dbh->prepare("INSERT INTO sae.logement(   id_logement,  
@@ -451,7 +451,7 @@
                                                         prix_logement)
                             VALUES (".$id_logement.",".$libelle_logement.",".$accroche_logement.",".$descritpif_logement."".$nb_personne_max.",".$longitude_logement.",".$latitude_logement.",".$adresse_logement.",".$code_postal_logement.",".$ville_logement.",".$nature_logement.",".$type_logement.",".$surface_habitable_logement.",".$nb_chambre_logement.",".$nb_salle_de_bain_logement.",".$amenagement_propose_logement.",".$installation_offerte_logement.",".$equipement_propose_logement.",".$service_complementaire_logement.",".$charge_additionnel_libelle.",".$image_1.",".$image_2.",".$prix_logement.")");
         $r->execute();
-    }
+    }*/
     ?>
     </form>
 </section> 
