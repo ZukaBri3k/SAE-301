@@ -1,14 +1,3 @@
-<?php
-session_start() ; 
-include('connect_params.php');
-try{
-    $dbh = new PDO("$driver:host=$server;dbname=$dbname",$user,$pass);
-    // $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::FETCH_ASSOC);
-}
-catch(PDOException $e){
-    echo "erreur !: ".$e->getMessage()."<br/>\n";
-}
-?>
 
 <!DOCTYPE html>
 <html lang="fr">
